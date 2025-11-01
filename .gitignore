@@ -1,0 +1,25 @@
+@'
+# Entornos
+.venv/
+venv/
+env/
+
+# Datos (mantener estructura sin archivos)
+data/01_raw/*
+data/02_intermediate/*
+data/03_primary/*
+data/04_feature/*
+data/05_model_input/*
+!data/.gitkeep
+
+# Jupyter y cache
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+
+# Kedro Viz export (si lo usas)
+data/06_reporting/*
+'@ | Set-Content .gitignore

@@ -1,0 +1,15 @@
+stages:
+  full:
+    cmd: kedro run
+    deps:
+      - src
+      - conf
+      - data/01_raw
+    outs:
+      - data/06_models
+      - data/08_reporting
+    metrics:
+      - data/08_reporting/reg_metrics.json:
+          cache: false
+      - data/08_reporting/clf_metrics.json:
+          cache: false

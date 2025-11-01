@@ -1,0 +1,7 @@
+test_size: 0.2
+random_state: 42
+
+cv_folds: 5
+reg_scoring: neg_root_mean_squared_error
+
+clf_scoring: f1_macro

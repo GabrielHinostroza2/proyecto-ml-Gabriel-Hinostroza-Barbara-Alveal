@@ -1,0 +1,23 @@
+model_name,params,mean_test_score,std_test_score,rank_test_score
+knn,{'model__n_neighbors': 5},0.5499160657854587,0.0186946067901959,1
+logreg,{'model__C': 5},0.4932563129233842,0.0087446863630654,1
+svc,"{'model__C': 0.5, 'model__kernel': 'linear', 'model__probability': True}",0.4724464169348996,0.0108461709402884,1
+rf,"{'model__max_depth': None, 'model__n_estimators': 400}",0.5476778104293956,0.0302380382044657,1
+gboost,"{'model__learning_rate': 0.1, 'model__n_estimators': 400}",0.5594893167812847,0.0249880877999906,1
+knn,{'model__n_neighbors': 11},0.5051773721241941,0.0098435026958351,2
+svc,"{'model__C': 1, 'model__kernel': 'linear', 'model__probability': True}",0.4721564585272942,0.0112464357945972,2
+rf,"{'model__max_depth': None, 'model__n_estimators': 200}",0.5456542766033066,0.033137020484323,2
+svc,"{'model__C': 10, 'model__kernel': 'linear', 'model__probability': True}",0.4721564585272942,0.0112464357945972,2
+logreg,{'model__C': 1},0.4836735137144651,0.0095194558052627,2
+gboost,"{'model__learning_rate': 0.1, 'model__n_estimators': 200}",0.5496142295541699,0.021860882616374,2
+logreg,{'model__C': 0.5},0.4743685919684752,0.006851171865738,3
+gboost,"{'model__learning_rate': 0.05, 'model__n_estimators': 400}",0.5467843657821687,0.0226923382253392,3
+rf,"{'model__max_depth': 20, 'model__n_estimators': 400}",0.5267037361546913,0.0241241598533299,3
+knn,{'model__n_neighbors': 21},0.4728839756272996,0.0086855830271347,3
+svc,"{'model__C': 10, 'model__kernel': 'rbf', 'model__probability': True}",0.4611724838133861,0.004715443923769,4
+gboost,"{'model__learning_rate': 0.05, 'model__n_estimators': 200}",0.5400443551840743,0.0188624185185029,4
+rf,"{'model__max_depth': 20, 'model__n_estimators': 200}",0.5250400371482647,0.0226466143919054,4
+svc,"{'model__C': 1, 'model__kernel': 'rbf', 'model__probability': True}",0.4580301554554944,0.0002185864289217,5
+svc,"{'model__C': 0.5, 'model__kernel': 'rbf', 'model__probability': True}",0.4580301554554944,0.0002185864289217,5
+rf,"{'model__max_depth': 10, 'model__n_estimators': 200}",0.4960513218056186,0.0123696779265932,5
+rf,"{'model__max_depth': 10, 'model__n_estimators': 400}",0.4939506628274085,0.0139411359593953,6

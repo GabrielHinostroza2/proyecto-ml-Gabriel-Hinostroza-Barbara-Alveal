@@ -1,0 +1,189 @@
+# === PRESET PARA TODOS LOS CSV (UTF-8, sin índice) ===
+csv_common: &csv_common
+  type: pandas.CSVDataset
+  fs_args:
+    open_args_load:
+      mode: "r"
+      encoding: "utf-8"
+    open_args_save:
+      mode: "w"
+      encoding: "utf-8"
+      newline: ""
+  load_args:
+    encoding: utf-8
+  save_args:
+    index: false
+    encoding: utf-8
+
+# === Ejemplos del template (ok dejarlos si no los usas) ===
+companies:
+  <<: *csv_common
+  filepath: data/01_raw/companies.csv
+
+shuttles:
+  type: pandas.ExcelDataset
+  filepath: data/01_raw/shuttles.xlsx
+  load_args:
+    engine: openpyxl
+
+preprocessed_companies:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/preprocessed_companies.parquet
+
+preprocessed_shuttles:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/preprocessed_shuttles.parquet
+
+model_input_table:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/model_input_table.parquet
+
+regressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor.pickle
+  versioned: true
+
+shuttle_passenger_capacity_plot_exp:
+  type: plotly.PlotlyDataset
+  filepath: data/08_reporting/shuttle_passenger_capacity_plot_exp.json
+  versioned: true
+  plotly_args:
+    type: bar
+    fig:
+      x: shuttle_type
+      y: passenger_capacity
+      orientation: h
+    layout:
+      xaxis_title: Shuttles
+      yaxis_title: Average passenger capacity
+      title: Shuttle Passenger capacity
+
+shuttle_passenger_capacity_plot_go:
+  type: plotly.JSONDataset
+  filepath: data/08_reporting/shuttle_passenger_capacity_plot_go.json
+  versioned: true
+
+dummy_confusion_matrix:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/dummy_confusion_matrix.png
+  versioned: true
+
+# === Airbnb datasets (tu flujo) ===
+listings:
+  <<: *csv_common
+  filepath: data/01_raw/listings.csv
+
+calendar:
+  <<: *csv_common
+  filepath: data/01_raw/calendar.csv
+
+reviews:
+  <<: *csv_common
+  filepath: data/01_raw/reviews.csv
+
+# Intermedios / Primary
+listings_clean:
+  <<: *csv_common
+  filepath: data/02_intermediate/listings_clean.csv
+
+calendar_agg:
+  <<: *csv_common
+  filepath: data/02_intermediate/calendar_agg.csv
+
+data_enriched:
+  <<: *csv_common
+  filepath: data/02_intermediate/data_enriched.csv
+
+listings_for_regression:
+  <<: *csv_common
+  filepath: data/03_primary/listings_for_regression.csv
+
+listings_for_classification:
+  <<: *csv_common
+  filepath: data/03_primary/listings_for_classification.csv
+
+# Feature matrices
+X_reg:
+  <<: *csv_common
+  filepath: data/04_feature/X_reg.csv
+
+y_reg:
+  <<: *csv_common
+  filepath: data/04_feature/y_reg.csv
+
+X_clf:
+  <<: *csv_common
+  filepath: data/04_feature/X_clf.csv
+
+y_clf:
+  <<: *csv_common
+  filepath: data/04_feature/y_clf.csv
+
+# Splits
+X_train_reg:
+  <<: *csv_common
+  filepath: data/05_model_input/X_train_reg.csv
+
+X_test_reg:
+  <<: *csv_common
+  filepath: data/05_model_input/X_test_reg.csv
+
+y_train_reg:
+  <<: *csv_common
+  filepath: data/05_model_input/y_train_reg.csv
+
+y_test_reg:
+  <<: *csv_common
+  filepath: data/05_model_input/y_test_reg.csv
+
+X_train_clf:
+  <<: *csv_common
+  filepath: data/05_model_input/X_train_clf.csv
+
+X_test_clf:
+  <<: *csv_common
+  filepath: data/05_model_input/X_test_clf.csv
+
+y_train_clf:
+  <<: *csv_common
+  filepath: data/05_model_input/y_train_clf.csv
+
+y_test_clf:
+  <<: *csv_common
+  filepath: data/05_model_input/y_test_clf.csv
+best_regressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/best_regressor.pkl
+
+reg_cv_results:
+  <<: *csv_common
+  filepath: data/08_reporting/reg_cv_results.csv
+
+reg_cv_summary:
+  <<: *csv_common
+  filepath: data/08_reporting/reg_cv_summary.csv
+
+reg_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/reg_metrics.json
+
+best_classifier:
+  type: pickle.PickleDataset
+  filepath: data/06_models/best_classifier.pkl
+
+clf_cv_results:
+  <<: *csv_common
+  filepath: data/08_reporting/clf_cv_results.csv
+
+clf_cv_summary:
+  <<: *csv_common
+  filepath: data/08_reporting/clf_cv_summary.csv
+
+clf_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/clf_metrics.json
+
+clf_confusion_matrix:
+  type: json.JSONDataset
+  filepath: data/08_reporting/clf_confusion_matrix.json
+
