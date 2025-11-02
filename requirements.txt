@@ -1,4 +1,5 @@
-kedro==1.4.0
+kedro>=1.0.0pip install --upgrade pip
+
 kedro-datasets[pandas]==3.0.1
 pandas==2.2.2
 numpy==1.26.4

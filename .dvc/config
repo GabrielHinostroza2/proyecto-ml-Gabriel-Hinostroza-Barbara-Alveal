@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = https://github.com/GabrielHinostroza2/proyecto-ml-Gabriel-Hinostroza-Pedro-Barrientos.git
