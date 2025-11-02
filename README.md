@@ -1,10 +1,10 @@
-# Proyecto ML Gabriel Hinostroza-Pedro Barrientos
+# Proyecto ML Gabriel Hinostroza-Bárbara Alveal
 
 [![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
  # Proyecto ML – Airbnb Seattle (Kedro + Notebooks)
 
 **Curso:** Machine Learning (MLY0100)  
-**Nombres** Gabriel Hinostroza - Pedro Barrientos>  
+**Nombres** Gabriel Hinostroza - Bárbara Alveal>  
 **Video explicativo:** https://drive.google.com/file/d/1V6zvXfHEK73-m_376QJ6-oIQ2-MMEdKj/view?usp=drive_link
 
 ---
@@ -19,7 +19,7 @@ Implementar un flujo completo de **ciencia de datos** usando el dataset **Airbnb
 ---
 
 ## 📦 Estructura del proyecto (Kedro)
-proyecto-ml-Gabriel Hinostroza-Pedro-Barrientos>/
+proyecto-ml-Gabriel Hinostroza-Bárbara Alveal>/
 ├─ conf/
 │ └─ base/
 │ ├─ catalog.yml # Datasets (raw → primary → feature → model_input)
