@@ -5,3 +5,14 @@ cv_folds: 5
 reg_scoring: neg_root_mean_squared_error
 
 clf_scoring: f1_macro
+
+clustering:
+  kmeans_k: 4
+  dbscan_eps: 0.5
+  dbscan_min_samples: 10
+  gmm_components: 4
+
+dimensionality_reduction:
+  pca_n_components: 2
+  tsne_n_components: 2
+  tsne_perplexity: 30

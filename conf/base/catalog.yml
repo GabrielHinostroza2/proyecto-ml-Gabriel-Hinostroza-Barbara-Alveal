@@ -15,7 +15,7 @@ csv_common: &csv_common
     index: false
     encoding: utf-8
 
-# === Ejemplos del template (ok dejarlos si no los usas) ===
+# === Ejemplos del template ===
 companies:
   <<: *csv_common
   filepath: data/01_raw/companies.csv
@@ -68,7 +68,7 @@ dummy_confusion_matrix:
   filepath: data/08_reporting/dummy_confusion_matrix.png
   versioned: true
 
-# === Airbnb datasets (tu flujo) ===
+# === Airbnb datasets ===
 listings:
   <<: *csv_common
   filepath: data/01_raw/listings.csv
@@ -186,4 +186,30 @@ clf_metrics:
 clf_confusion_matrix:
   type: json.JSONDataset
   filepath: data/08_reporting/clf_confusion_matrix.json
+
+## Clustering outputs
+clustering_features:
+  <<: *csv_common
+  filepath: data/04_feature/X_reg.csv
+
+clustering_results:
+  <<: *csv_common
+  filepath: data/07_model_output/clustering_results.csv
+
+clustering_metrics:
+  <<: *csv_common
+  filepath: data/08_reporting/clustering_metrics.csv
+
+pca_projection:
+  <<: *csv_common
+  filepath: data/07_model_output/pca_projection.csv
+
+pca_explained_variance:
+  <<: *csv_common
+  filepath: data/08_reporting/pca_explained_variance.csv
+
+tsne_projection:
+  <<: *csv_common
+  filepath: data/07_model_output/tsne_projection.csv
+
 
